@@ -24,7 +24,7 @@ useEffect( () =>{
 
 
     const handleNavigate = () =>{
-        navigate(``)
+        navigate(`/products/${brand_name}`)
     }
 
 

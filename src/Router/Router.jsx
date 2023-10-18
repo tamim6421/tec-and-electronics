@@ -6,6 +6,7 @@ import MyCart from "../Pages/MyCart/MyCart";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import PrivetRoute from "../PrivetRaout/PrivetRoute";
+import Products from "../Components/Products/Products";
 
 
 const router = createBrowserRouter([
@@ -33,6 +34,11 @@ const router = createBrowserRouter([
             {
                 path:'register',
                 element:<Register></Register>
+            },
+            {
+                path: '/products/:brand',
+                element: <Products></Products>,
+                loader: ()=> fetch('http://localhost:5000/products')
             }
         ]
     }

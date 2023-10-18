@@ -5,6 +5,8 @@ import { FaEye,FaEyeSlash  } from "react-icons/fa";
 import Navbar from "../../Components/Navbar/Navbar";
 import { useContext, useRef, useState } from "react";
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import toast from 'react-hot-toast';
+import SocialLogin from '../../Sociallogin/SocialLogin';
 
 
 const Login = () => {
@@ -27,7 +29,7 @@ const Login = () => {
         signInUser(email, password)
       .then(res =>{
         const user = res.user
-
+        toast.success('Login Successful')
         event.target.reset()
         console.log(user)
 
@@ -103,7 +105,7 @@ const Login = () => {
                    <p className='text-white mt-5'>New This Site? Please <Link to='/register'>   <span className='text-rose-300 underline font-semibold'> Register</span> </Link></p>
                  </div>
                  <div>
-                   {/* <SocialLogin></SocialLogin> */}
+                   <SocialLogin></SocialLogin>
                 </div>
                </form>
              </div>

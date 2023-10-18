@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import { FaEye,FaEyeSlash  } from "react-icons/fa";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
+import SocialLogin from "../../Sociallogin/SocialLogin";
 
 
 const Register = () => {
@@ -19,7 +20,7 @@ const Register = () => {
         const photo = form.photo.value 
         const email = form.email.value 
         const password = form.password.value 
-       console.log(name, photo, email, password)
+    
 
        createUser(email, password)
        .then( res =>{
@@ -32,6 +33,7 @@ const Register = () => {
 
           console.log(user)
           navigate('/')
+
 
         } )
     })
@@ -132,7 +134,7 @@ const Register = () => {
                <p className='text-white mt-4'>Already have an account? Please  <Link to='/login'>   <span className='text-rose-600 font-semibold underline'> Login</span> </Link></p>
              </div>
              <div>
-                {/* <SocialLogin></SocialLogin> */}
+                <SocialLogin></SocialLogin>
              </div>
            </form>
          </div>
