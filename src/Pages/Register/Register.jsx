@@ -1,11 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../../Components/Navbar/Navbar";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaEye,FaEyeSlash  } from "react-icons/fa";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import toast from "react-hot-toast";
 
 
 const Register = () => {
-
+  const {createUser, handleUpdateProfile} = useContext(AuthContext)
+      const navigate = useNavigate()
     const [showPass, setShowPass] = useState(false)
 
 
@@ -17,6 +20,26 @@ const Register = () => {
         const email = form.email.value 
         const password = form.password.value 
        console.log(name, photo, email, password)
+
+       createUser(email, password)
+       .then( res =>{
+        const user = res.user
+     
+        handleUpdateProfile(name, photo)
+        .then(() =>{
+          toast.success('User Created Successful')
+          event.target.reset()
+
+          console.log(user)
+          navigate('/')
+
+        } )
+    })
+
+
+       .catch(error =>{
+        console.log(error)
+       })
 
     }
 

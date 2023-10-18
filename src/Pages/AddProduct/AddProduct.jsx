@@ -6,8 +6,34 @@ const AddProduct = () => {
 
     const handleAddProduct = event =>{
         event.preventDefault()
+        const form = event.target 
+        const name = form.name.value 
+        const bName = form.bName.value 
+        const photo = form.photo.value
+        const type = form.type.value 
+        const price = form.type.value 
+        const description = form.description.value
+        const rating = form.rating.value
+
+        const newProduct = {name, bName, photo, type, price, description, rating}
+        console.log(newProduct)
+
+        fetch('http://localhost:5000/products',{
+            method:"POST",
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(newProduct)
+        })
+
+        .then(res => res.json())
+        .then(data =>{
+            console.log(data)
+        })
+
 
     }
+
     return (
         <div>
             <Navbar></Navbar>

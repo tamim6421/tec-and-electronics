@@ -1,22 +1,44 @@
 
 import './Login.css'
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye,FaEyeSlash  } from "react-icons/fa";
 import Navbar from "../../Components/Navbar/Navbar";
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 
 const Login = () => {
+  const{signInUser} = useContext(AuthContext)
     const [showPass, setShowPass] = useState(false)
     const emailRef = useRef(null)
+    const location = useLocation()
+    const navigate = useNavigate()
+   
 
 
     const handleLogin = event =>{
+      
         event.preventDefault()
         const form = event.target 
         const email = form.email.value 
         const password = form.password.value 
         console.log(email, password)
+
+        signInUser(email, password)
+      .then(res =>{
+        const user = res.user
+
+        event.target.reset()
+        console.log(user)
+
+        // Navigate after login 
+        navigate(location?.state ? location.state : '/')
+      })
+
+
+      .catch(error =>{
+        console.log(error)
+      })
     }
 
 

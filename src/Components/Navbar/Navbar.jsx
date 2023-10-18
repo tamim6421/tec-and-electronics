@@ -4,7 +4,7 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 
 const Navbar = () => {
-    const {user} = useContext(AuthContext)
+    const {user, logOut} = useContext(AuthContext)
 
     const links = <>
         <li>
@@ -87,7 +87,7 @@ const Navbar = () => {
           </li>
           <li className="w-full">
            <button
-         
+          onClick={logOut}
             className="btn btn-sm text-white  w-full bg-pink-400" > LogOut </button>
           </li>
   </ul>
