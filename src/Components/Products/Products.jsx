@@ -9,15 +9,15 @@ const Products = () => {
     const allData = useLoaderData()
     const [products, setProduct] = useState([])
     const {brand} = useParams()
-    console.log(allData)
-   console.log(brand)
+//     console.log(allData)
+//    console.log(brand)
 
     useEffect(() =>{
         const findProduct = allData.filter( data => data.bName.trim() == brand)
         setProduct(findProduct)
     } ,[])
 
-    console.log(products)
+    // console.log(products)
 
     return (
         <div>
