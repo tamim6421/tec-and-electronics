@@ -8,13 +8,13 @@ const AddProduct = () => {
         event.preventDefault()
         const form = event.target 
         const name = form.name.value 
-        const bName = form.bName.value 
+        const brandName = form.bName.value 
         const photo = form.photo.value
         const type = form.type.value 
-        const price = form.type.value 
+        const price = form.price.value 
         const description = form.description.value
         const rating = form.rating.value
-
+        const bName = brandName.toLowerCase()
         const newProduct = {name, bName, photo, type, price, description, rating}
         console.log(newProduct)
 
@@ -29,9 +29,10 @@ const AddProduct = () => {
         .then(res => res.json())
         .then(data =>{
             console.log(data)
+            if(data.insertedId){
+                alert('added')
+            }
         })
-
-
     }
 
     return (
@@ -216,3 +217,5 @@ const AddProduct = () => {
 };
 
 export default AddProduct;
+
+
