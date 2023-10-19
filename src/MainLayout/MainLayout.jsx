@@ -5,7 +5,7 @@ import { Toaster } from "react-hot-toast";
 
 const MainLayout = () => {
     return (
-        <div className="max-w-[1200px] mx-auto">
+        <div className="max-w-[1200px] mx-auto font-poppins text-gray-400 ">
          
 
             <div>

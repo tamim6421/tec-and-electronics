@@ -29,8 +29,8 @@ useEffect( () =>{
 
 
   return (
-    <div>
-      <div onClick={handleNavigate} className="card h-[300px] bg-base-100 shadow-xl">
+    <div className="" data-aos="zoom-in-down"  >
+      <div  onClick={handleNavigate} className="card box mb-36 h-[250px] cursor-pointer  bg-base-100 drop-shadow-xl" >
         <figure className="px-10 pt-10">
           <img
             src={brand_image}
@@ -39,7 +39,7 @@ useEffect( () =>{
           />
         </figure>
         <div className="card-body items-center text-center">
-          <h2 className="card-title">{brand_name}</h2>
+          <h2 className="card-title text-2xl text-gray-500 drop-shadow-xl">{brand_name}</h2>
          
           <div className="card-actions">
            
