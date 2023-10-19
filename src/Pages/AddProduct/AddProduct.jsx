@@ -1,4 +1,5 @@
 
+import Swal from "sweetalert2";
 import Navbar from "../../Components/Navbar/Navbar";
 
 
@@ -30,7 +31,11 @@ const AddProduct = () => {
         .then(data =>{
             console.log(data)
             if(data.insertedId){
-                alert('added')
+              Swal.fire(
+                'Success!',
+                'Product Added!',
+                'success'
+              )
             }
         })
     }
@@ -44,7 +49,7 @@ const AddProduct = () => {
           data-aos="fade-down"
         >
       
-          Add Your Product
+          Add Your <span className="text-yellow-400"> Product</span>
           <hr
             className=" border-2 w-24 mt-2 border-orange-500 mx-auto"
             data-aos="fade-up"
@@ -59,7 +64,7 @@ const AddProduct = () => {
         
       <div className="w-3/4 mx-auto bg-gray-50 p-5 shadow-lg mb-20">
       <h3
-          className="text-center my-10 mt-10 text-4xl text-pink-300 font-semibold"
+          className="text-center my-10 mt-10 text-4xl text-yellow-400 font-semibold"
           data-aos="fade-down"
         >
       
@@ -74,7 +79,7 @@ const AddProduct = () => {
         <div className="md:flex gap-4  mb-8 px-4">
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text text-gray-500 text-lg font-semibold  " data-aos="fade-up">Product Name</span>
+                <span className="label-text text-orange-300 text-lg font-semibold  " data-aos="fade-up">Product Name</span>
               </label>
               <label className="input-group">
                 <input
@@ -90,13 +95,14 @@ const AddProduct = () => {
             </div>
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text text-gray-500 text-lg font-semibold " data-aos="fade-down" >Brand Name</span>
+                <span className="label-text text-orange-300  text-lg font-semibold " data-aos="fade-down" >Brand Name</span>
               </label>
               <label className="input-group">
                 <input
                   type="text"
                   placeholder="Brand Name"
                   name="bName"
+               
                   required
                   className="input input-bordered w-full"
                   data-aos="fade-down"
@@ -108,13 +114,13 @@ const AddProduct = () => {
           <div className="md:flex gap-4 mb-8 px-4">
             <div className="form-control w-full">
               <label className="label">
-                <span className="label-text text-gray-500 text-lg font-semibold " data-aos="fade-up">Product Photo URL</span>
+                <span className="label-text text-orange-300  text-lg font-semibold " data-aos="fade-up">Product Photo URL</span>
               </label>
               <label className="input-group">
                 <input
                   type="text"
                   name="photo"
-                
+              
                   placeholder="Product Photo URL"
                   className="input input-bordered w-full"
                   data-aos="fade-up"
@@ -126,13 +132,14 @@ const AddProduct = () => {
           <div className="md:flex gap-4 mb-8 px-4">
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text text-gray-500 text-lg font-semibold " data-aos="fade-up"> Types Of Products</span>
+                <span className="label-text text-orange-300  text-lg font-semibold " data-aos="fade-up"> Types Of Products</span>
               </label>
               <label className="input-group">
                 <input
                   type="text"
                   name="type"
                   required
+                 
                   placeholder="Types Of Products"
                   className="input input-bordered w-full"
                   data-aos="fade-up"
@@ -141,12 +148,13 @@ const AddProduct = () => {
             </div>
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text text-gray-500 text-lg font-semibold " data-aos="fade-down">Price</span>
+                <span className="label-text text-orange-300  text-lg font-semibold " data-aos="fade-down">Price</span>
               </label>
               <label className="input-group">
                 <input
                   type="text"
                   placeholder="Price"
+                 
                   required
                   name="price"
                   className="input input-bordered w-full"
@@ -160,12 +168,13 @@ const AddProduct = () => {
           <div className="md:flex gap-4 mb-8 px-4">
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text text-gray-500 text-lg font-semibold " data-aos="fade-up">Short description</span>
+                <span className="label-text text-orange-300 text-lg font-semibold " data-aos="fade-up">Short description</span>
               </label>
               <label className="input-group">
                 <input
                   type="text"
                   name="description"
+                  
                   required
                   placeholder="Short description"
                   className="input input-bordered w-full"
@@ -175,12 +184,13 @@ const AddProduct = () => {
             </div>
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text text-gray-500 text-lg font-semibold " data-aos="fade-down">Rating</span>
+                <span className="label-text text-orange-300  text-lg font-semibold " data-aos="fade-down">Rating</span>
               </label>
               <label className="input-group">
                 <input
                   type="number"
                   placeholder="Rating"
+                 
                     required
                   name="rating"
                   className="input input-bordered w-full"
@@ -196,7 +206,7 @@ const AddProduct = () => {
             type="submit"
             name=""
             value="Add Product"
-            className="btn btn-block text-white bg-gray-300 hover:bg-gray-400"
+            className="btn btn-block text-black bg-yellow-300 hover:bg-yellow-400"
             id=""
             data-aos="fade-down"
           />
