@@ -18,16 +18,17 @@ const Products = () => {
     } ,[])
 
     // console.log(products)
+ 
 
     return (
         <div>
             <Navbar></Navbar>
             <div className=" containerP ">
-            <div className="carousel h-[60vh] w-full overlyP">
+            <div className="carousel h-[70vh] w-full overlyP">
 <div id="slide1" className="carousel-item relative w-full">
-  <img src="https://i.ibb.co/4m5GdgG/pexels-noah-erickson-404280.jpg" className="w-full" />
+  <img src="https://i.ibb.co/yq93Y8V/pngtree-digital-electronic-poster-banner-image-877671.jpg" className="w-full" />
         <div className=" absolute top-40 w-3/4  left-52  text-white">
-            <h2 className="text-4xl font-bold ">Best seller Product</h2>
+            <h2 className="text-4xl font-bold "></h2>
         </div>
   <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
     <a href="#slide4" className="btn btn-circle bg-gray-500">❮</a> 
@@ -35,10 +36,10 @@ const Products = () => {
   </div>
 </div> 
 <div id="slide2" className="carousel-item relative w-full">
-  <img src="https://i.ibb.co/qW4VWY3/pexels-timson-foox-2182863.jpg" className="w-full" />
+  <img src="https://i.ibb.co/ky7dVs7/Screenshot-2.png" className="w-full" />
 
   <div className=" absolute top-40 w-3/4  left-52  text-white">
-            <h2 className="text-4xl font-bold ">Best seller Product 2</h2>
+            <h2 className="text-4xl font-bold "> </h2>
         </div>
 
   <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -47,10 +48,10 @@ const Products = () => {
   </div>
 </div> 
 <div id="slide3" className="carousel-item relative w-full">
-  <img src="https://i.ibb.co/VwqYFds/pexels-david-bares-323687.jpg" className="w-full" />
+  <img src="https://i.ibb.co/X4DcPC3/138230199-kitchen-equipment-electronics-appliances-and-digital-products-sale-vector-illustration-fla.jpg" className="w-full" />
 
   <div className=" absolute top-40 w-3/4  left-52  text-white">
-            <h2 className="text-4xl font-bold ">Best seller Product3</h2>
+       
         </div>
 
   <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">

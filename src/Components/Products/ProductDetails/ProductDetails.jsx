@@ -50,7 +50,9 @@ const ProductDetails = () => {
           </figure>
          </div>
           <div className="card-body">
-            <h2 className="card-title">{name}</h2>
+            <h2 className="card-title">{name}
+            <div className="badge badge-secondary">NEW</div>
+            </h2>
             <h2 className="card-title">{bName}</h2>
             <h2 className="card-title">{type}</h2>
             <div>

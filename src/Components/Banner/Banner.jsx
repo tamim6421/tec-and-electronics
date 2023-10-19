@@ -16,13 +16,14 @@ const Banner = () => {
             
               <div className="w-2/4 px-5">
                 <h1 className="text-3xl md:text-6xl text-[#e65252a5] font-bold font-rope pl-5 " data-aos="fade-down" >
-                 BIYESADI EVENT MANAGEMENT</h1>
-                 <h3 className='text-2xl px-5 text-[#ea8773f2] mt-5 md:text-4xl animate__animated animate__fadeInUp '>
-                  Moment <br />
-                  You do not Forget
-                 </h3>                        
+                <span className='text-yellow-400' data-aos="fade-down">ELECTRIFY</span> <span className='text-white' data-aos="fade-left">YOUR DAY</span></h1>
+                 <h3 className='text-2xl px-5 text-gray-300 mt-5 md:text-4xl animate__animated animate__fadeInUp ' data-aos="fade-up">
+                  SHop For Electronics  <br />
+                  Products With Us
+                 </h3>
+                 <h1 className='bg-yellow-500 text-center mt-10 rounded-lg py-2 text-lg font-semibold' data-aos="fade-down">Shop Now</h1>                        
               </div>
-
+              
             </div>
           </div>
         </div>

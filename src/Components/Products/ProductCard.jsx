@@ -24,7 +24,19 @@ const ProductCard = ({product}) => {
     </div>
     <p className="block font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75">
       {name}
+      <div className="badge ml-2 badge-secondary">NEW</div>
     </p>
+
+    <div className="rating rating-sm">
+  <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+  <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" checked />
+  <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+  <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+  <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+</div>
+
+
+
   </div>
   <div className="p-6 pt-0">
   <Link to={`/update/${_id}`} > <button className="btn"> Update</button></Link>
