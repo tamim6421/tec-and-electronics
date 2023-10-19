@@ -1,12 +1,16 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Navbar from "../../Navbar/Navbar";
-import { useState } from "react";
+
+import { BsFillCartCheckFill } from "react-icons/bs";
+import { FaBackspace } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 
 const ProductDetails = () => {
 
   const loadedProducts = useLoaderData();
-  const [products, setProducts] = useState({})
+ const navigate = useNavigate()
+  // eslint-disable-next-line no-unused-vars
   const { _id, name, bName, photo, type, price, description, rating } =
     loadedProducts;
  
@@ -24,24 +28,33 @@ const ProductDetails = () => {
 
     .then(res => res.json())
     .then(data =>{
-        console.log(data)
+        // console.log(data)
         if(data.insertedId){
-            alert('added')
+          Swal.fire(
+            'Success!',
+            'Product added Successful!',
+            'success'
+          )
         }
     })
 
+    }
+
+    const handleBack = () =>{
+      navigate(-1)
     }
 
 
   return (
     <div>
       <Navbar></Navbar>
-      <h3>{name}</h3>
-      <h3></h3>
+      
+      
       <div>
-        <div className="card card-side p-3 flex flex-col md:flex-row bg-base-100 shadow-xl">
+        <div className="card card-side p-3 flex flex-col md:flex-row bg-base-100">
          <div>
-         <figure>
+        
+         <figure className="box">
             <img
               src={photo}
               alt="Movie"
@@ -49,20 +62,35 @@ const ProductDetails = () => {
             />
           </figure>
          </div>
-          <div className="card-body">
-            <h2 className="card-title">{name}
-            <div className="badge badge-secondary">NEW</div>
+          <div className="card-body justify-center space-y-2">
+          <h3 className="text-center text-3xl text-gray-500" data-aos="fade-up">Product Details 
+          <hr className="border-2 border-yellow-300" data-aos="fade-down" />
+          </h3>
+            <h2 className="card-title text-2xl" data-aos="fade-up">{name}
+            <div className="badge badge-warning p-3"data-aos="fade-down" >NEW</div>
             </h2>
-            <h2 className="card-title">{bName}</h2>
-            <h2 className="card-title">{type}</h2>
+            <h2 className="card-title " data-aos="fade-up">{bName} {type} </h2>
+          
             <div>
-                <h1> {rating} </h1>
-                <h1>{price} </h1>
+              <div>
+             
+              <div className="rating rating-md flex items-center gap-1" data-aos="fade-down">
+              <h1> {rating} </h1>
+                <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" />
+                <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" checked />
+                <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" />
+
+              </div>
+              </div>
+                <h1 className="text-xl" data-aos="fade-up"> <span className="text-3xl text-yellow-400 font-bold"> $</span> {price} </h1>
             </div>
-            <p>{description} </p>
+            <p data-aos="fade-down">{description} </p>
             <div className="card-actions ">
-              
-              <button onClick={() =>handleAddToCart(loadedProducts)} className="btn btn-primary">add to cart</button>
+              <button
+               onClick={() =>handleAddToCart(loadedProducts)} className="btn bg-yellow-300 " data-aos="fade-up">add to cart
+               <BsFillCartCheckFill className="text-red-400 text-3xl"></BsFillCartCheckFill>
+               </button>
+               <button onClick={handleBack} className="btn bg-rose-200" data-aos="fade-down"><FaBackspace className="text-red-400 text-3xl"></FaBackspace></button>
             </div>
           </div>
         </div>

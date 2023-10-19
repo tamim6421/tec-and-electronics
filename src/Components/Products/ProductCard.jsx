@@ -1,47 +1,74 @@
+/* eslint-disable react/prop-types */
+
 import { Link } from "react-router-dom";
+import { AiFillEdit  } from "react-icons/ai";
+
+import { BiSolidDetail } from "react-icons/bi";
 
 const ProductCard = ({product}) => {
-    const{_id, name, bName, price, reating, photo} = product
+    const{_id, name, bName, price, type, rating, photo} = product
     // console.log(product)
     return (
         <div>
+          
             <div>
-            <div className="relative flex flex-col text-gray-700 bg-white shadow-md rounded-xl bg-clip-border p-2">
-  <div className="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white h-96 rounded-xl bg-clip-border">
+            <div className="relative flex flex-col  text-gray-400 bg-white shadow-md rounded-xl bg-clip-border p-2" data-aos="zoom-in-down">
+  <div className="box relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white rounded-xl bg-clip-border">
     <img
       src={photo}
-      className="object-cover w-full h-full"
+      className="object-cover w-full h-[300px]"
     />
   </div>
   <div className="p-6">
     <div className="flex items-center justify-between mb-2">
-      <p className="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
-       {bName}
+      <p className="block font-sans text-xl antialiased font-medium leading-relaxed text-blue-gray-900" data-aos="zoom-in-up">
+       {name}
+       
       </p>
-      <p className="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
-        ${price}
+      <p className="block font-sans text-base antialiased font-semibold leading-relaxed text-rose-400" data-aos="fade-up">
+         <span className="text-yellow-400 text-2xl font-semibold">$</span> {price}
       </p>
     </div>
-    <p className="block font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75">
-      {name}
-      <div className="badge ml-2 badge-secondary">NEW</div>
+  <div className="flex justify-between items-center">
+  <div>
+   <p className="block font-sans text-lg antialiased font-normal leading-normal text-gray-700 opacity-75" data-aos="zoom-in-down">
+      {bName}
+      <div className="badge ml-2 text-white badge-error">NEW</div>
     </p>
-
-    <div className="rating rating-sm">
-  <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
-  <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" checked />
-  <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
-  <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
-  <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
-</div>
-
-
-
+    <p className="block font-sans text-xl antialiased font-normal leading-normal text-gray-700 opacity-75">
+      {type}
+      
+    </p>
+    
+   </div>
+ <div>
+ <div className="rating rating-sm flex items-center gap-1">
+    
+    <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+    <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" checked />
+    <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+    <h1>{rating} </h1>
   </div>
-  <div className="p-6 pt-0">
-  <Link to={`/update/${_id}`} > <button className="btn"> Update</button></Link>
-   <Link to={`/details/${_id}`}><button className="btn"> details</button></Link>
+ 
+ </div>
   </div>
+  
+  </div>
+  <div className="p-6 flex justify-between pt-0">
+  <Link to={`/update/${_id}`} > <button className="btn btn-sm mr-4 bg-red-100" data-aos="zoom-in-up"> 
+  edit
+  <AiFillEdit className="text-3xl text-yellow-500 "></AiFillEdit>
+  
+  </button></Link>
+
+
+   <Link to={`/details/${_id}`}><button className="btn btn-sm bg-yellow-100"  data-aos="zoom-in-down">
+   
+  <BiSolidDetail  className="text-3xl text-yellow-500 "></BiSolidDetail>
+ details
+</button></Link>
+  </div>
+
 </div>
             </div>
         </div>

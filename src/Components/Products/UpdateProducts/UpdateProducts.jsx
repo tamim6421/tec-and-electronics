@@ -1,6 +1,7 @@
 import { useLoaderData, useNavigate } from "react-router-dom";
 import Navbar from "../../Navbar/Navbar";
 import Swal from 'sweetalert2'
+import { FaBackspace } from "react-icons/fa";
 
 
 const UpdateProducts = () => {
@@ -54,7 +55,7 @@ const UpdateProducts = () => {
         <div>
               <div>
             <Navbar></Navbar>
-            <div className="text-center my-20">
+            {/* <div className="text-center my-20">
         <h3
           className="text-center text-4xl text-gray-300 font-semibold"
           data-aos="fade-down"
@@ -70,17 +71,17 @@ const UpdateProducts = () => {
           One of the hardest things about wedding planning is deciding on your
           vision. You might want some elements
         </p>
-      </div>
+      </div> */}
 
         
-      <div className="w-3/4 mx-auto bg-gray-50 p-5 shadow-lg mb-20">
+      <div className="w-3/4 mx-auto bg-base-100 mt-20 p-5 shadow-lg mb-20">
       <h3
-          className="text-center my-10 mt-10 text-4xl text-pink-300 font-semibold"
+          className="text-center my-10 mt-10 text-4xl  font-semibold"
           data-aos="fade-down"
         >
       
-           Update Your Product Info
-           <p className="text-2xl">{name} </p>
+           Update Your <span className="text-yellow-400">Product Info</span>
+           <p className="text-2xl text-orange-300 ">{name} </p>
           <hr
             className=" border-2 w-24 mt-2 border-orange-500 mx-auto"
             data-aos="fade-up"
@@ -93,7 +94,7 @@ const UpdateProducts = () => {
         <div className="md:flex gap-4  mb-8 px-4">
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text text-gray-500 text-lg font-semibold  " data-aos="fade-up">Product Name</span>
+                <span className="label-text text-orange-300 text-lg font-semibold  " data-aos="fade-up">Product Name</span>
               </label>
               <label className="input-group">
                 <input
@@ -110,7 +111,7 @@ const UpdateProducts = () => {
             </div>
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text text-gray-500 text-lg font-semibold " data-aos="fade-down" >Brand Name</span>
+                <span className="label-text text-orange-300  text-lg font-semibold " data-aos="fade-down" >Brand Name</span>
               </label>
               <label className="input-group">
                 <input
@@ -129,7 +130,7 @@ const UpdateProducts = () => {
           <div className="md:flex gap-4 mb-8 px-4">
             <div className="form-control w-full">
               <label className="label">
-                <span className="label-text text-gray-500 text-lg font-semibold " data-aos="fade-up">Product Photo URL</span>
+                <span className="label-text text-orange-300  text-lg font-semibold " data-aos="fade-up">Product Photo URL</span>
               </label>
               <label className="input-group">
                 <input
@@ -147,7 +148,7 @@ const UpdateProducts = () => {
           <div className="md:flex gap-4 mb-8 px-4">
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text text-gray-500 text-lg font-semibold " data-aos="fade-up"> Types Of Products</span>
+                <span className="label-text text-orange-300  text-lg font-semibold " data-aos="fade-up"> Types Of Products</span>
               </label>
               <label className="input-group">
                 <input
@@ -163,7 +164,7 @@ const UpdateProducts = () => {
             </div>
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text text-gray-500 text-lg font-semibold " data-aos="fade-down">Price</span>
+                <span className="label-text text-orange-300  text-lg font-semibold " data-aos="fade-down">Price</span>
               </label>
               <label className="input-group">
                 <input
@@ -183,7 +184,7 @@ const UpdateProducts = () => {
           <div className="md:flex gap-4 mb-8 px-4">
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text text-gray-500 text-lg font-semibold " data-aos="fade-up">Short description</span>
+                <span className="label-text text-orange-300 text-lg font-semibold " data-aos="fade-up">Short description</span>
               </label>
               <label className="input-group">
                 <input
@@ -199,7 +200,7 @@ const UpdateProducts = () => {
             </div>
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text text-gray-500 text-lg font-semibold " data-aos="fade-down">Rating</span>
+                <span className="label-text text-orange-300  text-lg font-semibold " data-aos="fade-down">Rating</span>
               </label>
               <label className="input-group">
                 <input
@@ -221,7 +222,7 @@ const UpdateProducts = () => {
             type="submit"
             name=""
             value="Update Product"
-            className="btn btn-block text-white bg-gray-300 hover:bg-gray-400"
+            className="btn btn-block  bg-yellow-200 hover:bg-yellow-300"
             id=""
             data-aos="fade-down"
           />
@@ -232,7 +233,7 @@ const UpdateProducts = () => {
         <button className="btn block mx-auto w-full text-white bg-rose-300 hover:bg-rose-400" data-aos="fade-up">See Info</button>
         </Link>
       </div> */}
-        <button onClick={handleBack} className="btn mt-5 block mx-auto bg-gray-400 text-white ">Back</button>
+         <button onClick={handleBack} className="btn my-10 block mx-auto  bg-rose-200" data-aos="fade-down"><FaBackspace className="text-red-400 text-3xl"></FaBackspace></button>
       </div>
      
 

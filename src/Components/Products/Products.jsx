@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import ProductCard from "./ProductCard";
 import './Products.css'
@@ -9,16 +9,18 @@ const Products = () => {
     const allData = useLoaderData()
     const [products, setProduct] = useState([])
     const {brand} = useParams()
+    const navigate = useNavigate()
 //     console.log(allData)
 //    console.log(brand)
 
     useEffect(() =>{
         const findProduct = allData.filter( data => data.bName.trim() == brand)
-        setProduct(findProduct)
+          setProduct(findProduct)
     } ,[])
 
-    // console.log(products)
- 
+    const handleBack = () =>{
+      navigate('/')
+    }
 
     return (
         <div>
@@ -63,11 +65,45 @@ const Products = () => {
 
 </div> 
             </div>
-            <div className="grid gap-5 grid-cols-1 md:grid-cols-3">
-                {
-                    products.map( (product, i) => <ProductCard key={i} product={product} ></ProductCard> )
-                }
-            </div>
+           {
+            products.length === 0 ? <div>
+                          <div className="card mb-10 bg-base-100 ">
+            <figure className="px-10 pt-10">
+              <img src="https://i.ibb.co/RCGwR3t/no-product-found.png" alt="Shoes" className="rounded-xl" />
+            </figure>
+              <button onClick={handleBack} className="btn w-[100px] mx-auto bg-yellow-300">Back</button>
+          </div>
+
+            </div> : 
+
+                  <div>
+                       <div className="text-center mb-20">
+        <h3
+          className="text-center text-4xl  text-yellow-300 font-semibold"
+          data-aos="fade-down"
+        >
+          Our Latest Products
+          <hr
+            className=" border-2 w-24 mt-2 border-orange-500 mx-auto"
+            data-aos="fade-up"
+          />
+        </h3>
+        <p className="text-gray-400 mt-4" data-aos="fade-up">
+          We offer competitive price on our 100 million product my range
+        </p>
+      </div>
+
+                    <div className="grid gap-5 grid-cols-1 md:grid-cols-3">
+                  {
+                      products.map( (product, i) => <ProductCard key={i} product={product} ></ProductCard> )
+                  }
+                  </div>
+
+
+                  </div>
+
+                
+           }
         </div>
     );
 };
