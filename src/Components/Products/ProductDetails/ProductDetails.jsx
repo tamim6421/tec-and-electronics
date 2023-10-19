@@ -1,11 +1,36 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import Navbar from "../../Navbar/Navbar";
+import { useState } from "react";
 
 
 const ProductDetails = () => {
+
   const loadedProducts = useLoaderData();
+  const [products, setProducts] = useState({})
   const { _id, name, bName, photo, type, price, description, rating } =
     loadedProducts;
+ 
+
+    const handleAddToCart = (products) =>{
+      console.log('card added', products)
+
+      fetch('http://localhost:5000/carts',{
+        method:"POST",
+        headers:{
+            'content-type':'application/json'
+        },
+        body:JSON.stringify(loadedProducts)
+    })
+
+    .then(res => res.json())
+    .then(data =>{
+        console.log(data)
+        if(data.insertedId){
+            alert('added')
+        }
+    })
+
+    }
 
 
   return (
@@ -34,8 +59,8 @@ const ProductDetails = () => {
             </div>
             <p>{description} </p>
             <div className="card-actions ">
-              <button className="btn btn-primary">Delete</button>
-              <button className="btn btn-primary">add to cart</button>
+              
+              <button onClick={() =>handleAddToCart(loadedProducts)} className="btn btn-primary">add to cart</button>
             </div>
           </div>
         </div>
