@@ -29,13 +29,13 @@ const SocialLogin = () => {
     return (
         <div>
                <div>
-             <h1 className="text-center font-semibold text-rose-300 divider">Login With</h1>
+             <h1 className="text-center font-semibold text-white divider">Login With</h1>
                <div className=" justify-around">
-               <button onClick={()=>handleSocialLogin(googleLogin) } className="btn btn-outline w-full text-white hover:bg-[#6e6e6edd]  ">
+               <button onClick={()=>handleSocialLogin(googleLogin) } className="btn btn-outline w-full text-white  hover:bg-yellow-300 hover:text-black ">
          <FaGoogle  className="text-2xl text-blue-600 "></FaGoogle>
          LOgin With Google
         </button>
-        <button className="btn btn-outline w-full mt-2 text-white hover:bg-[#6e6e6edd]  ">
+        <button className="btn btn-outline w-full mt-2 text-white hover:bg-yellow-300 hover:text-black">
          <FaGithub className="text-2xl text-black"></FaGithub>
          LOgin With GitHub
         </button>

@@ -10,6 +10,8 @@ import Products from "../Components/Products/Products";
 import UpdateProducts from "../Components/Products/UpdateProducts/UpdateProducts";
 import ProductDetails from "../Components/Products/ProductDetails/ProductDetails";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import ShowProducts from "../Pages/ShowProducts/ShowProducts";
+import Contact from "../Pages/Contact/Contact";
 
 
 const router = createBrowserRouter([
@@ -54,6 +56,15 @@ const router = createBrowserRouter([
                 path: '/details/:id',
                 element:<PrivetRoute><ProductDetails></ProductDetails></PrivetRoute>,
                 loader:({params}) => fetch(`https://tec-and-electronics-server.vercel.app/products/${params.id}`)
+            },
+            {
+                path:'/allProducts',
+                element: <ShowProducts></ShowProducts>,
+                loader: ()=> fetch('https://tec-and-electronics-server.vercel.app/products')
+            },
+            {
+                path:'/contact',
+                element:<Contact></Contact>
             }
         ]
     }

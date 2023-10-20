@@ -27,9 +27,9 @@ const Services = () => {
       <div className="grid gap-4 grid-cols-1 md:grid-cols-4">
         <div className="card  mb-5 drop-shadow-md" data-aos="fade-down">
           <figure className="px-10 pt-10">
-            <FaBabyCarriage className="text-5xl"></FaBabyCarriage>
+            <FaBabyCarriage className="text-5xl text-yellow-400"></FaBabyCarriage>
           </figure>
-          <div className="card-body box items-center text-center">
+          <div className="card-body  items-center text-center">
             <h2 className="card-title">World Delivery</h2>
             <p>
               {" "}
@@ -39,9 +39,9 @@ const Services = () => {
         </div>
         <div className="card  mb-5 drop-shadow-md" data-aos="fade-up">
           <figure className="px-10 pt-10">
-            <FaFileInvoice className="text-5xl"></FaFileInvoice>
+            <FaFileInvoice className="text-5xl text-yellow-400"></FaFileInvoice>
           </figure>
-          <div className="card-body box items-center text-center">
+          <div className="card-body  items-center text-center">
             <h2 className="card-title">Safe Payment</h2>
             <p>
               {" "}
@@ -51,9 +51,9 @@ const Services = () => {
         </div>
         <div className="card  mb-5 drop-shadow-md" data-aos="fade-down">
           <figure className="px-10 pt-10">
-            <FaUserSecret className="text-5xl"></FaUserSecret>
+            <FaUserSecret className="text-5xl text-yellow-400" ></FaUserSecret>
           </figure>
-          <div className="card-body box items-center text-center">
+          <div className="card-body items-center text-center">
             <h2 className="card-title">Shop With Confidence Delivery</h2>
             <p>
               {" "}
@@ -63,9 +63,9 @@ const Services = () => {
         </div>
         <div className="card  mb-5 drop-shadow-md" data-aos="fade-up">
           <figure className="px-10 pt-10">
-            <FaHeadset className="text-5xl"></FaHeadset>
+            <FaHeadset className="text-5xl text-yellow-400"></FaHeadset>
           </figure>
-          <div className="card-body box items-center text-center">
+          <div className="card-body  items-center text-center">
             <h2 className="card-title">24/77 Support </h2>
             <p>
               {" "}

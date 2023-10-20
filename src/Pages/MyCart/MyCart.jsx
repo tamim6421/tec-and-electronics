@@ -49,7 +49,7 @@ const MyCart = () => {
     <div>
       <Navbar></Navbar>
 
-      <div className="grid gap-4 grid-cols-1 mt-20 px-3 p-1">
+      <div className="grid gap-4 grid-cols-1 my-20 px-3 p-1">
      
         {products.map((product) => (
           <div key={product._id}>

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Arrivals = () => {
   return (
     <div className="my-36">
@@ -66,12 +68,15 @@ const Arrivals = () => {
           <div className="card-body  items-center text-center" data-aos="fade-up">
             <h2 className="card-title text-black font-bold">Recorder
             <div className="badge ml-2 text-white badge-warning p-3">NEW</div>
+
             </h2>
             <p>Catch the big deals on the device</p>
             
           </div>
         </div>
       </div>
+
+      <Link to='/allProducts'><button className="btn bg-yellow-400 block mx-auto" data-aos="fade-up" >Show All Products</button></Link>
     </div>
   );
 };

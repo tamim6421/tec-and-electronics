@@ -39,7 +39,7 @@ const Navbar = () => {
 
 
     const links = <>
-        <li>
+        <li className="mr-3">
     <NavLink
   to="/"
   className={({ isActive, isPending }) =>
@@ -64,14 +64,25 @@ const Navbar = () => {
     <NavLink
   to="/myCart"
   className={({ isActive, isPending }) =>
-    isPending ? "pending" : isActive ? "bg-yellow-200 text-black" : "hover:bg-yellow-200 hover:text-black"
+    isPending ? "pending" : isActive ? "bg-yellow-300 text-black" : "hover:bg-yellow-200 hover:text-black"
   }
->
+> Cart
   <span>
-
+  
   <BsFillCartCheckFill className="text-red-400 text-3xl"></BsFillCartCheckFill>
   </span>
  {products.length}
+</NavLink>
+    </li>
+
+    <li>
+    <NavLink
+  to="/contact"
+  className={({ isActive, isPending }) =>
+    isPending ? "pending" : isActive ? "bg-yellow-300 text-black" : "hover:bg-yellow-200 hover:text-black"
+  }
+>
+  Contact Us
 </NavLink>
     </li>
 
@@ -94,7 +105,7 @@ const Navbar = () => {
   
   </ul>
 </div>
-<Link to='/'><button className=" normal-case px-4 text-yellow-400 font-extrabold text-2xl flex items-center">  <span className="text-white font-bold"> </span> dSTORE <span></span> </button></Link>
+<Link to='/'><button className=" normal-case px-4 bg-[#f5eae83f] py-2 rounded-lg drop-shadow-md text-yellow-400 font-extrabold text-3xl flex items-center">  <span className="text-rose-500 font-bold"> d </span> <span className="text-yellow-400">S </span><span className="text-yellow-400 ">T</span> <span className="text-yellow-400 ">O</span> <span className="text-yellow-400 ">R</span> <span className="text-yellow-400 ">E</span> </button> </Link>
 </div>
 <div className="navbar-center hidden lg:flex">
 <ul className="menu menu-horizontal text-lg px-1">
