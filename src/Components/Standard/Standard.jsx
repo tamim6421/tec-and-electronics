@@ -1,19 +1,20 @@
 const Standard = () => {
   return (
+    
     <div>
       <div className="hero min-h-[50vh] my-10">
         <div className="hero-content flex-col lg:flex-row">
           <img
             src="https://i.ibb.co/xmPJMpn/pexels-ola-dapo-3345882.jpg"
-            className=" box  max-w-sm rounded-lg shadow-2xl"
+            className=" box max-w-xs  rounded-lg shadow-2xl"
             data-aos="zoom-in-up"
 
           />
           <div>
-          <div data-aos="fade-down" className="relative flex flex-col mt-6  bg-white shadow-md w-96 rounded-xl bg-clip-border ">
+          <div data-aos="fade-down" className="relative flex flex-col mt-6  bg-white shadow-md  rounded-xl bg-clip-border ">
   <div className="p-6 box" >
     
-    <h5 className="block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+    <h5 className="block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900 p-2">
      Receive <span className="text-3xl text-yellow-400 font-bold"> $20</span> coupon for first shopping
     </h5>
     <p className="block font-sans text-base text-gray-400 ">
@@ -21,6 +22,7 @@ const Standard = () => {
       dreams and inspire others.
     </p>
   </div>
+  
   <div className="p-6 pt-0">
     <a
       className="!font-medium !text-blue-gray-900 !transition-colors hover:!text-pink-500"
@@ -56,6 +58,8 @@ const Standard = () => {
         </div>
       </div>
     </div>
+
+
   );
 };
 

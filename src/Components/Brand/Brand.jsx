@@ -21,7 +21,7 @@ const Brand = () => {
             <div className="">
             <div className="text-center my-20">
         <h3
-          className="text-center text-4xl text-yellow-300 font-semibold"
+          className="text-center text-4xl px-2 text-yellow-300 font-semibold"
           data-aos="fade-down"
         >
           Choose Your Favorite Brand 

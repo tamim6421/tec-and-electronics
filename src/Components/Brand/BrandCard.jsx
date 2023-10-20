@@ -11,7 +11,7 @@ const BrandCard = ({ item }) => {
 //   console.log(products)
     
 useEffect( () =>{
-    fetch('http://localhost:5000/products')
+    fetch('https://tec-and-electronics-server.vercel.app/products')
     .then(res => res.json())
     .then(data =>{
         setProduct(data)
@@ -30,7 +30,7 @@ useEffect( () =>{
 
   return (
     <div className="" data-aos="zoom-in-down"  >
-      <div  onClick={handleNavigate} className="card box mb-36 h-[250px] cursor-pointer  bg-base-100 drop-shadow-xl" >
+      <div  onClick={handleNavigate} className="card box mb-36 h-[250px] cursor-pointer  bg-base-100 drop-shadow-xl " >
         <figure className="px-10 pt-10">
           <img
             src={brand_image}

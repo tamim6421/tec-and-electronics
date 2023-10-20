@@ -29,8 +29,8 @@ const router = createBrowserRouter([
             },
             {
                 path:'/MyCart',
-                element:<MyCart></MyCart>,
-                loader: () => fetch('http://localhost:5000/carts')
+                element:<PrivetRoute><MyCart></MyCart></PrivetRoute>,
+                loader: () => fetch('https://tec-and-electronics-server.vercel.app/carts')
             },
             {
                 path:'/login',
@@ -43,17 +43,17 @@ const router = createBrowserRouter([
             {
                 path: '/products/:brand',
                 element: <Products></Products>,
-                loader: ()=> fetch('http://localhost:5000/products')
+                loader: ()=> fetch('https://tec-and-electronics-server.vercel.app/products')
             },
             {
                 path: '/update/:id',
-                element:<UpdateProducts></UpdateProducts>,
-                loader:({params}) => fetch(`http://localhost:5000/products/${params.id}`)
+                element:<PrivetRoute><UpdateProducts></UpdateProducts></PrivetRoute>,
+                loader:({params}) => fetch(`https://tec-and-electronics-server.vercel.app/products/${params.id}`)
             },
             {
                 path: '/details/:id',
-                element:<ProductDetails></ProductDetails>,
-                loader:({params}) => fetch(`http://localhost:5000/products/${params.id}`)
+                element:<PrivetRoute><ProductDetails></ProductDetails></PrivetRoute>,
+                loader:({params}) => fetch(`https://tec-and-electronics-server.vercel.app/products/${params.id}`)
             }
         ]
     }

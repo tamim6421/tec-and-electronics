@@ -15,9 +15,9 @@ const Banner = () => {
            
             
               <div className="w-2/4 px-5">
-                <h1 className="text-3xl md:text-6xl text-[#e65252a5] font-bold font-rope pl-5 " data-aos="fade-down" >
+                <h1 className="text-3xl lg:text-6xl text-[#e65252a5] font-bold font-rope pl-5 " data-aos="fade-down" >
                 <span className='text-yellow-400' data-aos="fade-down">ELECTRIFY</span> <span className='text-white' data-aos="fade-left">YOUR DAY</span></h1>
-                 <h3 className='text-xl px-5 text-gray-300 mt-5 md:text-4xl animate__animated animate__fadeInUp ' data-aos="fade-up">
+                 <h3 className='text-xl px-5 text-gray-300 lg:mt-3 lg:text-4xl animate__animated animate__fadeInUp ' data-aos="fade-up">
                   SHop  Electronics  <br />
                   Products With Us
                  </h3>

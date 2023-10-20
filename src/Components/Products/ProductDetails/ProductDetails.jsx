@@ -18,7 +18,7 @@ const ProductDetails = () => {
     const handleAddToCart = (products) =>{
       console.log('card added', products)
 
-      fetch('http://localhost:5000/carts',{
+      fetch('https://tec-and-electronics-server.vercel.app/carts',{
         method:"POST",
         headers:{
             'content-type':'application/json'
@@ -50,7 +50,7 @@ const ProductDetails = () => {
       <Navbar></Navbar>
       
       
-      <div>
+      <div className="my-36">
         <div className="card card-side p-3 flex flex-col md:flex-row bg-base-100">
          <div>
         

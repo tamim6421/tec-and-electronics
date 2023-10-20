@@ -78,7 +78,7 @@ const Navbar = () => {
   
   </ul>
 </div>
-<Link to='/'><button className=" normal-case px-4 text-yellow-400 font-extrabold text-2xl flex items-center"> <img src="https://i.ibb.co/h1ZJv34/ecom.png" className="w-12 m-1" alt="" /> <span className="text-white font-bold"> </span> dSTORE <span></span> </button></Link>
+<Link to='/'><button className=" normal-case px-4 text-yellow-400 font-extrabold text-2xl flex items-center">  <span className="text-white font-bold"> </span> dSTORE <span></span> </button></Link>
 </div>
 <div className="navbar-center hidden lg:flex">
 <ul className="menu menu-horizontal text-lg px-1">
@@ -113,24 +113,24 @@ const Navbar = () => {
           
         </div>
       </label>
-      <ul tabIndex={0} className="menu menu-sm dropdown-content text-sm  space-y-2 mt-3 z-[1] p-2 shadow bg-rose-200 rounded-box min-w-min">
+      <ul tabIndex={0} className="menu menu-sm dropdown-content text-sm  space-y-2 mt-3 z-[1] p-2 shadow bg-base-100 rounded-box min-w-min">
         <li>
         {
-                  user.displayName == null ? <button className="btn btn-sm text-white bg-pink-500"> User </button> :<button className="btn btn-sm  text-white bg-pink-500">  {user.displayName} </button>
+                  user.displayName == null ? <button className="btn btn-sm text-black bg-yellow-400"> User </button> :<button className="btn btn-sm  text-black bg-yellow-400">  {user.displayName} </button>
                 }
               </li>
               <li>
-              <button className="btn btn-sm text-white bg-pink-400" > {user.email} </button>
+              <button className="btn btn-sm text-black bg-yellow-400" > {user.email} </button>
               </li>
               <li className="w-full">
                <button
               onClick={logOut}
-                className="btn btn-sm text-white  w-full bg-pink-400" > LogOut </button>
+                className="btn btn-sm text-black bg-yellow-400" > LogOut </button>
               </li>
       </ul>
     </div>
 
-      </div> : <Link to='/login'> <button className="rounded-lg btn-sm text-white bg-pink-400 ">lOGIN</button> </Link>
+      </div> : <Link to='/login'> <button className="rounded-lg btn-sm text-black bg-yellow-400 ">lOGIN</button> </Link>
 
     }
    
