@@ -9,12 +9,14 @@ import PrivetRoute from "../PrivetRaout/PrivetRoute";
 import Products from "../Components/Products/Products";
 import UpdateProducts from "../Components/Products/UpdateProducts/UpdateProducts";
 import ProductDetails from "../Components/Products/ProductDetails/ProductDetails";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 
 const router = createBrowserRouter([
     {
         path: '/',
         element:<MainLayout></MainLayout>,
+        errorElement:<ErrorPage></ErrorPage>,
         children:[
             {
                 path:'/',
