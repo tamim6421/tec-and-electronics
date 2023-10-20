@@ -1,9 +1,21 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { BsFillCartCheckFill } from "react-icons/bs";
 
 
 const Navbar = () => {
+  const [products, setProducts] = useState([])
+
+
+  useEffect( () =>{
+    fetch('https://tec-and-electronics-server.vercel.app/carts')
+    .then(res => res.json())
+    .then( data => setProducts(data))
+  }, [])
+
+
+
     const {user, logOut} = useContext(AuthContext)
     const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light");
 
@@ -52,10 +64,14 @@ const Navbar = () => {
     <NavLink
   to="/myCart"
   className={({ isActive, isPending }) =>
-    isPending ? "pending" : isActive ? "bg-yellow-300 text-black" : "hover:bg-yellow-200 hover:text-black"
+    isPending ? "pending" : isActive ? "bg-yellow-200 text-black" : "hover:bg-yellow-200 hover:text-black"
   }
 >
- Cart
+  <span>
+
+  <BsFillCartCheckFill className="text-red-400 text-3xl"></BsFillCartCheckFill>
+  </span>
+ {products.length}
 </NavLink>
     </li>
 

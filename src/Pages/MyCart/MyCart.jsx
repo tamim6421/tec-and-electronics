@@ -50,7 +50,7 @@ const MyCart = () => {
       <Navbar></Navbar>
 
       <div className="grid gap-4 grid-cols-1 mt-20 px-3 p-1">
-      <h1 className="text-yellow-400 text-xl">Total Added Product - <span className="text-3xl text-yellow-500">{products.length}</span></h1>
+     
         {products.map((product) => (
           <div key={product._id}>
            
@@ -82,7 +82,7 @@ const MyCart = () => {
                   >
                     <AiFillDelete className="text-3xl text-red-500 " ></AiFillDelete>
                   </button>
-                  <button onClick={handleBack} className="btn bg-rose-200" data-aos="fade-down"><FaBackspace className="text-red-400 text-3xl"></FaBackspace></button>
+                  <button onClick={handleBack} className="btn bg-yellow-200" data-aos="fade-down"><FaBackspace className="text-red-400 text-3xl"></FaBackspace></button>
 
 
                 </div>
