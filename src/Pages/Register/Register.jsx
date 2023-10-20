@@ -5,6 +5,7 @@ import { FaEye,FaEyeSlash  } from "react-icons/fa";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
 import SocialLogin from "../../Sociallogin/SocialLogin";
+import photo from '../../assets/undraw_register_login_pdn4.png'
 
 
 const Register = () => {
@@ -20,6 +21,26 @@ const Register = () => {
         const photo = form.photo.value 
         const email = form.email.value 
         const password = form.password.value 
+        const check = event.target.check.checked
+
+
+        if(password.length < 6){
+          toast.error('Password mast be at 6 character')
+          return 
+      }
+    
+    else if (!/^(?=.*[A-Z])/.test(password)){
+      toast.error('One Character should be UPPERCASE')
+      return 
+    }
+    else if(!/[!@#$%^&*(),.?":{}|<>]/.test(password)){
+      toast.error('Must have a special character')
+      return
+    }
+    else if(!check){
+      toast.error('Please Accept Our Trams And Conditions')
+      return
+    }
     
 
        createUser(email, password)
@@ -51,12 +72,12 @@ const Register = () => {
     <div className="overly">
     <Navbar></Navbar>
     <div className="hero min-h-screen">
-       <div className="hero-content flex-col lg:flex-row-reverse bg-[#bbbbbb53]">
+       <div className="hero-content flex-col lg:flex-row-reverse bg-[#bbbbbb25]">
          <div className="text-center lg:text-left">
-           <h1 className="text-5xl text-white mb-10 divider font-bold">Register now!</h1>
+           <h1 className="text-5xl text-yellow-400 mb-10 divider font-bold">Register now!</h1>
            <p className="py-6">
 
-            {/* <img src={photo} alt="" /> */}
+            <img src={photo} alt="" />
 
            </p>
          </div>
@@ -130,8 +151,8 @@ const Register = () => {
              </div>
             
              <div className="form-control mt-6">
-               <button className="btn bg-rose-500 text-white btn-error">register</button>
-               <p className='text-white mt-4'>Already have an account? Please  <Link to='/login'>   <span className='text-rose-600 font-semibold underline'> Login</span> </Link></p>
+               <button className="btn bg-yellow-300 text-black ">register</button>
+               <p className='text-white mt-4'>Already have an account? Please  <Link to='/login'>   <span className='text-yellow-400 font-semibold underline'> Login</span> </Link></p>
              </div>
              <div>
                 <SocialLogin></SocialLogin>

@@ -14,7 +14,9 @@ const Arrivals = () => {
             />
           </figure>
           <div className="card-body items-center text-center" data-aos="fade-up">
-            <h2 className="card-title text-black font-bold">Smart Phone</h2>
+            <h2 className="card-title text-black font-bold">Smart Phone
+            <div className="badge ml-2 text-white badge-warning p-3">NEW</div>
+            </h2>
             <p>Catch the big deals on the device</p>
           
           </div>
@@ -29,7 +31,9 @@ const Arrivals = () => {
             />
           </figure>
           <div className="card-body items-center text-center" data-aos="fade-down">
-            <h2 className="card-title text-black font-bold">Camera</h2>
+            <h2 className="card-title text-black font-bold">Camera
+            <div className="badge ml-2 text-white badge-warning p-3">NEW</div>
+            </h2>
             <p>Catch the big deals on the device</p>
            
           </div>
@@ -43,7 +47,9 @@ const Arrivals = () => {
             />
           </figure>
           <div className="card-body items-center text-center" data-aos="fade-down">
-            <h2 className="card-title text-black font-bold">Drone</h2>
+            <h2 className="card-title text-black font-bold">Drone
+            <div className="badge ml-2 text-white badge-warning p-3">NEW</div>
+            </h2>
             <p>Catch the big deals on the device</p>
            
           </div>
@@ -58,7 +64,9 @@ const Arrivals = () => {
             />
           </figure>
           <div className="card-body  items-center text-center" data-aos="fade-up">
-            <h2 className="card-title text-black font-bold">Recorder</h2>
+            <h2 className="card-title text-black font-bold">Recorder
+            <div className="badge ml-2 text-white badge-warning p-3">NEW</div>
+            </h2>
             <p>Catch the big deals on the device</p>
             
           </div>
