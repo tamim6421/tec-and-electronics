@@ -1,13 +1,15 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const BrandCard = ({ item }) => {
 
-  const { brand_name, brand_image, id } = item;
+  const { brand_name, brand_image,} = item;
   const navigate = useNavigate()
+  // eslint-disable-next-line no-unused-vars
   const [products, setProduct] = useState([])
 
-  const [displayProduct , setDisplayProduct ] = useState([])
+
 //   console.log(products)
     
 useEffect( () =>{
