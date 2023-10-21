@@ -7,7 +7,6 @@ import { BsFillCartCheckFill } from "react-icons/bs";
 const Navbar = () => {
   const [products, setProducts] = useState([])
 
-
   useEffect( () =>{
     fetch('https://tec-and-electronics-server.vercel.app/carts')
     .then(res => res.json())
@@ -66,9 +65,9 @@ const Navbar = () => {
   className={({ isActive, isPending }) =>
     isPending ? "pending" : isActive ? "bg-yellow-300 text-black" : "hover:bg-yellow-200 hover:text-black"
   }
-> Cart
+> 
+Cart
   <span>
-  
   <BsFillCartCheckFill className="text-red-400 text-3xl"></BsFillCartCheckFill>
   </span>
  {products.length}
@@ -163,6 +162,7 @@ const Navbar = () => {
    
   </div>
 </div>
+
     </div>
 );
 };

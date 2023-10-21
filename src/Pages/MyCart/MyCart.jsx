@@ -3,7 +3,9 @@ import Navbar from "../../Components/Navbar/Navbar";
 import Swal from "sweetalert2";
 import { useState } from "react";
 import { AiFillDelete } from "react-icons/ai";
-import { FaBackspace } from "react-icons/fa";
+import { AiOutlineRollback } from "react-icons/ai";
+
+
 
 const MyCart = () => {
   const allProducts = useLoaderData();
@@ -35,6 +37,9 @@ const MyCart = () => {
 
               const remaining = products.filter((use) => use._id !== id);
               setProducts(remaining);
+
+              // this reload user for change the cart icon product length
+              // window.location.reload(false)
             }
           });
       }
@@ -44,6 +49,7 @@ const MyCart = () => {
   const handleBack = () =>{
     navigate(-1)
   }
+
 
   return (
     <div>
@@ -65,7 +71,6 @@ const MyCart = () => {
                 <h1> <span className="text-xl" data-aos="fade-up"> {product.bName}</span> {product.type} </h1>
                 <h1 className="text-rose-400 font-semibold" data-aos="fade-down"> <span className="text-yellow-500 text-3xl"> $</span>  {product.price} </h1>
                 <p>{product.description}</p>
-                
                 <div className="rating rating-sm">
                 <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" data-aos="fade-down" />
                 <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" data-aos="fade-up" />
@@ -82,7 +87,7 @@ const MyCart = () => {
                   >
                     <AiFillDelete className="text-3xl text-red-500 " ></AiFillDelete>
                   </button>
-                  <button onClick={handleBack} className="btn bg-yellow-200" data-aos="fade-down"><FaBackspace className="text-red-400 text-3xl"></FaBackspace></button>
+                  <button onClick={handleBack} className="btn bg-yellow-50" data-aos="fade-down"><AiOutlineRollback className="text-green-400 text-3xl"></AiOutlineRollback></button>
 
 
                 </div>

@@ -2,7 +2,7 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 import Navbar from "../../Navbar/Navbar";
 
 import { BsFillCartCheckFill } from "react-icons/bs";
-import { FaBackspace } from "react-icons/fa";
+import { AiOutlineRollback } from "react-icons/ai";
 import Swal from "sweetalert2";
 
 
@@ -32,7 +32,7 @@ const ProductDetails = () => {
         if(data.insertedId){
           Swal.fire(
             'Success!',
-            'Product added Successful!',
+            'Product Added To Cart!',
             'success'
           )
         }
@@ -62,7 +62,7 @@ const ProductDetails = () => {
             />
           </figure>
          </div>
-          <div className="card-body justify-center space-y-2">
+          <div className="card-body justify-center space-y-4">
           <h3 className="text-center text-3xl text-gray-500" data-aos="fade-up">Product Details 
           <hr className="border-2 border-yellow-300" data-aos="fade-down" />
           </h3>
@@ -90,7 +90,7 @@ const ProductDetails = () => {
                onClick={() =>handleAddToCart(loadedProducts)} className="btn bg-yellow-300 " data-aos="fade-up">add to cart
                <BsFillCartCheckFill className="text-red-400 text-3xl"></BsFillCartCheckFill>
                </button>
-               <button onClick={handleBack} className="btn bg-rose-200" data-aos="fade-down"><FaBackspace className="text-red-400 text-3xl"></FaBackspace></button>
+               <button onClick={handleBack} className="btn bg-yellow-50" data-aos="fade-down"><AiOutlineRollback className="text-green-400 text-3xl"></AiOutlineRollback></button>
             </div>
           </div>
         </div>

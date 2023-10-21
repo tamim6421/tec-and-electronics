@@ -2,6 +2,7 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 import Navbar from "../../Navbar/Navbar";
 import Swal from 'sweetalert2'
 import { FaBackspace } from "react-icons/fa";
+import { AiOutlineRollback } from "react-icons/ai";
 
 
 const UpdateProducts = () => {
@@ -233,7 +234,7 @@ const UpdateProducts = () => {
         <button className="btn block mx-auto w-full text-white bg-rose-300 hover:bg-rose-400" data-aos="fade-up">See Info</button>
         </Link>
       </div> */}
-         <button onClick={handleBack} className="btn my-10 block mx-auto  bg-rose-200" data-aos="fade-down"><FaBackspace className="text-red-400 text-3xl"></FaBackspace></button>
+         <button onClick={handleBack} className="btn my-10 block mx-auto  bg-rose-200" data-aos="fade-down"><AiOutlineRollback className="text-red-400 text-3xl"></AiOutlineRollback></button>
       </div>
      
 

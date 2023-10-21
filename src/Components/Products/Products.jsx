@@ -25,15 +25,15 @@ const Products = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <div className=" containerP ">
-            <div className="carousel h-[70vh] w-full overlyP">
+            <div className="mb-20">
+            <div className="carousel h-[60vh] w-full mb-20">
 <div id="slide1" className="carousel-item relative w-full">
-  <img src="https://i.ibb.co/yq93Y8V/pngtree-digital-electronic-poster-banner-image-877671.jpg" className="w-full" />
+  <img src="https://i.ibb.co/gTyhnjY/Electronics-Shop-Facebook-Ad-Template.webp" className="w-full" />
         <div className=" absolute top-40 w-3/4  left-52  text-white">
             <h2 className="text-4xl font-bold "></h2>
         </div>
   <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-    <a href="#slide4" className="btn btn-circle bg-gray-500">❮</a> 
+    <a href="#slide4" className="btn btn-circle bg-gray-100">❮</a> 
     <a href="#slide2" className="btn btn-circle">❯</a>
   </div>
 </div> 
