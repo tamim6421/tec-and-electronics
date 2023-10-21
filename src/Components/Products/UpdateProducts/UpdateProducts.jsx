@@ -1,7 +1,7 @@
 import { useLoaderData, useNavigate } from "react-router-dom";
 import Navbar from "../../Navbar/Navbar";
 import Swal from 'sweetalert2'
-import { FaBackspace } from "react-icons/fa";
+
 import { AiOutlineRollback } from "react-icons/ai";
 
 

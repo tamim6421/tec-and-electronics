@@ -9,13 +9,23 @@ import Swal from "sweetalert2";
 const ProductDetails = () => {
 
   const loadedProducts = useLoaderData();
+ 
+
  const navigate = useNavigate()
   // eslint-disable-next-line no-unused-vars
   const { _id, name, bName, photo, type, price, description, rating } =
     loadedProducts;
  
+    
 
     const handleAddToCart = (products) =>{
+     
+   const userData = JSON.parse(localStorage.getItem('user'));
+   console.log(userData)
+
+      products.email = userData.email
+      console.log(products)
+    
       console.log('card added', products)
 
       fetch('https://tec-and-electronics-server.vercel.app/carts',{
@@ -35,6 +45,11 @@ const ProductDetails = () => {
             'Product Added To Cart!',
             'success'
           )
+          // let length = parseInt(document.getElementById('cartLength').innerText) 
+          // length++;
+          // console.log(length)
+          // document.getElementById('cartLength').innerText = length
+          
         }
     })
 
@@ -51,6 +66,7 @@ const ProductDetails = () => {
       
       
       <div className="my-36">
+       
         <div className="card card-side p-3 flex flex-col md:flex-row bg-base-100">
          <div>
         

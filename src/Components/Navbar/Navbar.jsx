@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
@@ -6,6 +7,8 @@ import { BsFillCartCheckFill } from "react-icons/bs";
 
 const Navbar = () => {
   const [products, setProducts] = useState([])
+
+
 
   useEffect( () =>{
     fetch('https://tec-and-electronics-server.vercel.app/carts')
@@ -16,6 +19,7 @@ const Navbar = () => {
 
 
     const {user, logOut} = useContext(AuthContext)
+    localStorage.setItem('user', JSON.stringify(user))
     const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light");
 
     const handleToggle = e =>{
@@ -59,8 +63,8 @@ const Navbar = () => {
   Add Product
 </NavLink>
     </li>
-        <li>
-    <NavLink
+        <li  >
+    <NavLink id ="cartLength"
   to="/myCart"
   className={({ isActive, isPending }) =>
     isPending ? "pending" : isActive ? "bg-yellow-300 text-black" : "hover:bg-yellow-200 hover:text-black"
@@ -70,7 +74,12 @@ Cart
   <span>
   <BsFillCartCheckFill className="text-red-400 text-3xl"></BsFillCartCheckFill>
   </span>
- {products.length}
+
+ {/* {
+localStorage.getItem('user') == "null" ? 0 :  products.filter(item => item.email == JSON.parse(localStorage.getItem('user') ).email).length
+  
+
+ } */}
 </NavLink>
     </li>
 
@@ -131,8 +140,10 @@ Cart
       user ? <div> 
           <div className="dropdown dropdown-end">
       <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+        
         <div className="w-10 rounded-full">
           {
+            
             user.photoURL === null ?  <img  src="https://i.ibb.co/hXYvv9g/girl2.jpg" alt={user.displayName} /> :
             <img src={user.photoURL } alt={user.displayName} />
           }

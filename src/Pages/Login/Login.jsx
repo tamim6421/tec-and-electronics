@@ -46,7 +46,7 @@ const Login = () => {
         toast.success('Login Successful')
         event.target.reset()
         console.log(user)
-
+        localStorage.setItem('user', JSON.stringify(user));
         // Navigate after login 
         navigate(location?.state ? location.state : '/')
       })

@@ -5,10 +5,32 @@ import { Link } from "react-router-dom";
 import { AiFillEdit  } from "react-icons/ai";
 
 import { BiSolidDetail } from "react-icons/bi";
+import { FaStar } from "react-icons/fa";
+import { useState } from "react";
 
 const AllProductsCards = ({product}) => {
     const{_id, name, bName, price, type, rating, photo} = product
     console.log(product)
+
+    const startGenerate = (rating) => {
+      const [selected, setSelected] = useState();
+      return Array(rating)
+        .fill()
+        .map((item, i) => (
+          <Start
+            key={i}
+            selected={selected > i}
+            onSelected={() => setSelected(i + 1)}
+          />
+        ));
+    };
+    
+    const Start = ({ selected, onSelected }) => {
+      return <FaStar color={selected ? "red" : "gray"} onClick={onSelected} />;
+    };
+
+
+
     return (
         <div>
              <div>
@@ -42,13 +64,20 @@ const AllProductsCards = ({product}) => {
     
    </div>
  <div>
- <div className="rating rating-sm flex items-center gap-1">
+ {/* <div className="rating rating-sm flex items-center gap-1">
     
     <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
     <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" checked />
     <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
     <h1>{rating} </h1>
-  </div>
+  </div> */}
+
+ <div className="flex items-center ">
+ {
+    startGenerate(5)
+  }
+  <h1 className="ml-1">{rating} </h1>
+ </div>
  
  </div>
   </div>

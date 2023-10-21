@@ -1,4 +1,31 @@
+/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
+import { FaStar } from "react-icons/fa";
+import { useState } from "react";
+
+
+
+
+
+
+const startGenerate = (numOfStarts = 5) => {
+  const [selected, setSelected] = useState(0);
+  
+  return Array(numOfStarts)
+    .fill()
+    .map((item, i) => (
+      <Start
+        key={i}
+        selected={selected > i}
+        onSelected={() => setSelected(i + 1)}
+      />
+    ));
+};
+
+const Start = ({ selected, onSelected }) => {
+  return <FaStar color={selected ? "red" : "gray"} onClick={onSelected} />;
+};
+
 
 const Arrivals = () => {
   return (
@@ -20,7 +47,11 @@ const Arrivals = () => {
             <div className="badge ml-2 text-white badge-warning p-3">NEW</div>
             </h2>
             <p>Catch the big deals on the device</p>
-          
+            <div className="flex">
+           {
+              startGenerate(5)
+             }
+           </div>
           </div>
         </div>
         <div className="card  ">
@@ -37,7 +68,11 @@ const Arrivals = () => {
             <div className="badge ml-2 text-white badge-warning p-3">NEW</div>
             </h2>
             <p>Catch the big deals on the device</p>
-           
+            <div className="flex">
+           {
+              startGenerate(5)
+             }
+           </div>
           </div>
         </div>
         <div className="card  ">
@@ -53,7 +88,11 @@ const Arrivals = () => {
             <div className="badge ml-2 text-white badge-warning p-3">NEW</div>
             </h2>
             <p>Catch the big deals on the device</p>
-           
+            <div className="flex">
+           {
+              startGenerate(5)
+             }
+           </div>
           </div>
         </div>
         <div className="card ">
@@ -68,10 +107,14 @@ const Arrivals = () => {
           <div className="card-body  items-center text-center" data-aos="fade-up">
             <h2 className="card-title text-black font-bold">Recorder
             <div className="badge ml-2 text-white badge-warning p-3">NEW</div>
-
+            
             </h2>
             <p>Catch the big deals on the device</p>
-            
+           <div className="flex">
+           {
+              startGenerate(5)
+             }
+           </div>
           </div>
         </div>
       </div>

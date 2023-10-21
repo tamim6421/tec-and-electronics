@@ -16,7 +16,7 @@ const Products = () => {
     useEffect(() =>{
         const findProduct = allData.filter( data => data.bName.trim() == brand)
           setProduct(findProduct)
-    } ,[])
+    } ,[allData, brand])
 
     const handleBack = () =>{
       navigate('/')

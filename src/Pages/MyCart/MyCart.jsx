@@ -9,10 +9,13 @@ import { AiOutlineRollback } from "react-icons/ai";
 
 const MyCart = () => {
   const allProducts = useLoaderData();
-  const [products, setProducts] = useState(allProducts);
+  
+const userData = JSON.parse(localStorage.getItem('user'));
+ const filterProductByEmail = userData == null ? allProducts : allProducts.filter( item => item.email == userData.email )
+  const [products, setProducts] = useState(filterProductByEmail);
   const navigate = useNavigate()
 
-//   console.log(products);
+  // console.log(products);
 
   const handleDelete = (id) => {
     // console.log("delete", id);
@@ -54,9 +57,9 @@ const MyCart = () => {
   return (
     <div>
       <Navbar></Navbar>
-
+      
       <div className="grid gap-4 grid-cols-1 my-20 px-3 p-1">
-     
+      <h1 className="text-xl font-semibold">Your Added Products : <span className="text-2xl text-red-400">{products.length}</span> </h1>
         {products.map((product) => (
           <div key={product._id}>
            

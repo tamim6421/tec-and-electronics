@@ -15,8 +15,9 @@ const AddProduct = () => {
         const price = form.price.value 
         const description = form.description.value
         const rating = form.rating.value
+        const userMail = 'OK'
         const bName = brandName.toLowerCase()
-        const newProduct = {name, bName, photo, type, price, description, rating}
+        const newProduct = {name, bName, photo, type, price, description, rating, userMail}
         console.log(newProduct)
 
         fetch('https://tec-and-electronics-server.vercel.app/products',{
