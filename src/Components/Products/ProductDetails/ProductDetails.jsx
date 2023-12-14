@@ -9,8 +9,6 @@ import Swal from "sweetalert2";
 const ProductDetails = () => {
 
   const loadedProducts = useLoaderData();
- 
-
  const navigate = useNavigate()
   // eslint-disable-next-line no-unused-vars
   const { _id, name, bName, photo, type, price, description, rating } =
@@ -28,7 +26,7 @@ const ProductDetails = () => {
     
       console.log('card added', products)
 
-      fetch('https://tec-and-electronics-server.vercel.app/carts',{
+      fetch('http://localhost:5000/carts',{
         method:"POST",
         headers:{
             'content-type':'application/json'

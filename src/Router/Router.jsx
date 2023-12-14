@@ -12,6 +12,8 @@ import ProductDetails from "../Components/Products/ProductDetails/ProductDetails
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import ShowProducts from "../Pages/ShowProducts/ShowProducts";
 import Contact from "../Pages/Contact/Contact";
+import PaymentSuccess from "../Pages/MyCart/PaymentSuccess";
+import PaymentFail from "../Pages/MyCart/PaymentFail";
 
 
 const router = createBrowserRouter([
@@ -32,7 +34,16 @@ const router = createBrowserRouter([
             {
                 path:'/MyCart',
                 element:<PrivetRoute><MyCart></MyCart></PrivetRoute>,
-                loader: () => fetch('https://tec-and-electronics-server.vercel.app/carts')
+                loader: () => fetch('http://localhost:5000/carts')
+            },
+            // payment route 
+            {
+                path:'/payment/success/:tranId',
+                element: <PaymentSuccess></PaymentSuccess>
+            },
+            {
+                path:'/payment/fail/:tranId',
+                element: <PaymentFail></PaymentFail>
             },
             {
                 path:'/login',
@@ -45,22 +56,22 @@ const router = createBrowserRouter([
             {
                 path: '/products/:brand',
                 element: <Products></Products>,
-                loader: ()=> fetch('https://tec-and-electronics-server.vercel.app/products')
+                loader: ()=> fetch('http://localhost:5000/products')
             },
             {
                 path: '/update/:id',
                 element:<PrivetRoute><UpdateProducts></UpdateProducts></PrivetRoute>,
-                loader:({params}) => fetch(`https://tec-and-electronics-server.vercel.app/products/${params.id}`)
+                loader:({params}) => fetch(`http://localhost:5000/products/${params.id}`)
             },
             {
                 path: '/details/:id',
                 element:<PrivetRoute><ProductDetails></ProductDetails></PrivetRoute>,
-                loader:({params}) => fetch(`https://tec-and-electronics-server.vercel.app/products/${params.id}`)
+                loader:({params}) => fetch(`http://localhost:5000/products/${params.id}`)
             },
             {
                 path:'/allProducts',
                 element: <ShowProducts></ShowProducts>,
-                loader: ()=> fetch('https://tec-and-electronics-server.vercel.app/products')
+                loader: ()=> fetch('http://localhost:5000/products')
             },
             {
                 path:'/contact',

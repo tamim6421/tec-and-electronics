@@ -1,15 +1,18 @@
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { json, useLoaderData, useNavigate } from "react-router-dom";
 import Navbar from "../../Components/Navbar/Navbar";
 import Swal from "sweetalert2";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { AiFillDelete } from "react-icons/ai";
 import { AiOutlineRollback } from "react-icons/ai";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { data } from "autoprefixer";
 
 
 
 const MyCart = () => {
-  const allProducts = useLoaderData();
-  
+const allProducts = useLoaderData();
+const {user} = useContext(AuthContext) 
+// console.log(user)
 const userData = JSON.parse(localStorage.getItem('user'));
  const filterProductByEmail = userData == null ? allProducts : allProducts.filter( item => item.email == userData.email )
   const [products, setProducts] = useState(filterProductByEmail);
@@ -29,7 +32,7 @@ const userData = JSON.parse(localStorage.getItem('user'));
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://tec-and-electronics-server.vercel.app/carts/${id}`, {
+        fetch(`http://localhost:5000/carts/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -51,6 +54,33 @@ const userData = JSON.parse(localStorage.getItem('user'));
 
   const handleBack = () =>{
     navigate(-1)
+  }
+
+
+  const handelPayment = (product) =>{
+    const paymentInfo ={
+      userEmail : user?.email,
+      name: user?.displayName,
+      productName: product.name,
+      brandName: product.bName,
+      price: parseFloat( product.price),
+      productId: product._id,
+    }
+    console.log(paymentInfo)
+
+    fetch('http://localhost:5000/order', {
+      method: 'POST',
+      headers:{
+        'content-type' : 'application/json'
+      },
+      body: JSON.stringify(paymentInfo)
+    })
+    .then(res => res.json())
+    .then( data =>{
+      window.location.replace(data.url)
+      console.log(data)
+    })
+
   }
 
 
@@ -83,6 +113,15 @@ const userData = JSON.parse(localStorage.getItem('user'));
        
 
                 <div className="card-actions justify-end">
+                  <button
+                    onClick={() => handelPayment(product)}
+                    className="btn bg-green-200"
+                    data-aos="fade-up"
+                  >
+                   Payment 
+                  </button>
+
+
                   <button
                     onClick={() => handleDelete(product._id)}
                     className="btn bg-red-200"

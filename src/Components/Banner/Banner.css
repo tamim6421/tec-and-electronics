@@ -18,3 +18,12 @@
     transform: scale(1.05);
 }
 
+/* 
+<p  className='text-gray-600 text-5xl drop-shadow-lg font-bold uppercase'>Tamim Hossain </p>
+<p className='text-gray-600 text-center uppercase text-xl font-semibold mt-5 tracking-widest'>Full stack web developer</p>
+<p className="flex justify-center items-center">
+<p className=" ">
+<MdOutlineMail className="bg-yellow-400 text-2xl rounded-full m-3 p-1 text-gray-700 " />
+</p>
+<p className="text-gray-600 text-lg tracking-widest">eubtamim@gmail.com</p>
+</p> */

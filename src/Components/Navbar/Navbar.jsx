@@ -11,7 +11,7 @@ const Navbar = () => {
 
 
   useEffect( () =>{
-    fetch('https://tec-and-electronics-server.vercel.app/carts')
+    fetch('http://localhost:5000/carts')
     .then(res => res.json())
     .then( data => setProducts(data))
   }, [])
